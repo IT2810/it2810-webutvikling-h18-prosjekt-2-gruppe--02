@@ -1,0 +1,15 @@
+<svg class="centered" width="1500" height="600">
+    <circle id="rotateCircle" cx="120" cy="90" r="40" stroke="teal" stroke-width="3" fill="teal" opacity="0.70"/>
+    <circle id="changeBackground" cx="220" cy="180" r="50" stroke="gray" stroke-width="3" fill="transparent" />
+    <circle id="rotateX2" cx="270" cy="270" r="80" stroke="gray" stroke-width="3" fill="transparent" />
+    <ellipse id="shaker" cx="400" cy="500" rx="180" ry="90" class="ellipse" stroke="teal" r="160"  fill="teal" />
+    <polygon points="750,60 600,400 900,400" class="triangle" fill="teal"/>
+    <rect x="650" y="580" width="400" height="25" fill="coral" opacity=".5"/>
+    <rect x="1050" y="100" width="25" height="400" fill="grey"/>
+    <rect x="0" y="0" width="5" height="100" fill="brown"/>
+    <rect x="0" y="0" width="100" height="5" fill="brown"/>
+    <polygon points="1020,500 1020,550 933,550 1020,400" class="triangle" fill="purple" opacity= ".6"/>
+    <rect x="930" y="400" width="5" height="150" fill="green"/>
+    <rect x="930" y="400" width="90" height="5" fill="green"/>
+    <polygon points="750,0 440,198 390,78 210,78 400,198" class="triangle2" fill="red" opacity = "0.5"/>
+</svg>
