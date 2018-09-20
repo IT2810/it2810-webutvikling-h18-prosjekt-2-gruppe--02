@@ -10,8 +10,11 @@ class App extends Component {
               <div className="box1">
                   <h1>Box1: Overskrift</h1>
               </div>
-              <div className="box2">
-                  Box2: ContentRow
+              <div className="box2" class="tab" id="nested">
+                  <button className="tablinks" onClick="openCity(event, 'Kategori 1')">Kategori 1</button>
+                  <button className="tablinks" onClick="openCity(event, 'Kategori 2')">Kategori 2</button>
+                  <button className="tablinks" onClick="openCity(event, 'Kategori 3')">Kategori 3</button>
+                  <button className="tablinks" onClick="openCity(event, 'Kategori 4')">Kategori 4</button>
               </div>
               <div className="box3">
                   <h3>Medie</h3>
