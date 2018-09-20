@@ -5,6 +5,7 @@ import Content from './components/Content.js'
 
 class App extends Component {
     render() {
+        let targets = [1, 1];
     return (
       <div className="App">
         <header className="App-header">
@@ -12,7 +13,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to This I guess</h1>
         </header>
         <div className="Ajax-box">
-            <Content />
+            <Content targets={targets}/>
         </div>
       </div>
     );
