@@ -5,7 +5,7 @@ import Content from './components/Content.js'
 
 class App extends Component {
     render() {
-        let targets = [1, 1];
+        let targets = [1, 3];
         let path = 'audio/' + targets[0].toString() + '/' + targets[1].toString() +'.mp3';
     return (
       <div className="App">

@@ -10,7 +10,7 @@ class FigureFetch extends Component {
         let path = 'SVG/' + this.props.targets[0].toString() + '/' + this.props.targets[1].toString() + '.svg';
         fetch(path)
             .then(response => response.text())
-            .then(text => {this.setState({fig: text}); console.log(text);})
+            .then(text => {this.setState({fig: text})})
             .catch(function (error) {
                 console.log('Some problem... \n', error);
             });
