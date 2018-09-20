@@ -8,10 +8,30 @@ class App extends Component {
           <div className="Grid-container">
 
               <div className="box1">
-                  <h1>Box1: Overskrift</h1></div>
-              <div className="box2"> Box2: ContentRow</div>
-              <div className="box3"> Box3: Checkmeny</div>
-              <div className="box4"> Box4: Bilde</div>
+                  <h1>Box1: Overskrift</h1>
+              </div>
+              <div className="box2">
+                  Box2: ContentRow
+              </div>
+              <div className="box3">
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+              </div>
+
+              <div className="box4">
+                  Box4: Bilde
+              </div>
+
           </div>
       );
     /*return (
