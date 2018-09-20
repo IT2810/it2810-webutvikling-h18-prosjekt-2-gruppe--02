@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
+import FigureFetch from "./FigureFetch";
+import JsonFetch from "./JsonFetch";
+import AudioFetch from "./AudioFetch";
 
 class Content extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {fig: ''};
     }
 
-    componentDidMount() {
-        fetch('https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/tiger.svg')
-            .then(response => response.text())
-            .then(text => {this.setState({fig: text}); console.log(text);})
-            .catch(function (error) {
-                console.log('Some problem... \n', error);
-            });
-    }
 
     render() {
         return (
-            <div dangerouslySetInnerHTML={{__html: this.state.fig}} />
+            <div>
+                <FigureFetch/>
+                <JsonFetch/>
+                <AudioFetch/>
+            </div>
 
-
-    );
+        );
     }
 
 }
