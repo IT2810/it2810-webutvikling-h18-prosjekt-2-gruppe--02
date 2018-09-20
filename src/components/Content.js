@@ -4,17 +4,13 @@ import JsonFetch from "./JsonFetch";
 import AudioFetch from "./AudioFetch";
 
 class Content extends Component {
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
         return (
             <div>
                 <FigureFetch targets={this.props.targets}/>
-                {/*<JsonFetch/>
-                <AudioFetch/>*/}
+                <JsonFetch targets={this.props.targets}/>
+                {/*<AudioFetch/>*/}
             </div>
 
         );

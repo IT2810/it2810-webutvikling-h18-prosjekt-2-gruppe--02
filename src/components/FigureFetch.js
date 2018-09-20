@@ -7,7 +7,7 @@ class FigureFetch extends Component {
     }
 
     componentDidMount() {
-        let path = 'SVG/cat' + this.props.targets[0].toString() + '/fig' + this.props.targets[1].toString() + '.svg';
+        let path = 'SVG/' + this.props.targets[0].toString() + '/fig' + this.props.targets[1].toString() + '.svg';
         fetch(path)
             .then(response => response.text())
             .then(text => {this.setState({fig: text}); console.log(text);})
