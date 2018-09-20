@@ -6,6 +6,7 @@ import Content from './components/Content.js'
 class App extends Component {
     render() {
         let targets = [1, 1];
+        let path = 'audio/' + targets[0].toString() + '/' + targets[1].toString() +'.mp3';
     return (
       <div className="App">
         <header className="App-header">
@@ -14,6 +15,10 @@ class App extends Component {
         </header>
         <div className="Ajax-box">
             <Content targets={targets}/>
+            <audio autoPlay loop>
+                <source src={path} type={"audio/mpeg"}/>
+                Your browser is trash
+            </audio>
         </div>
       </div>
     );

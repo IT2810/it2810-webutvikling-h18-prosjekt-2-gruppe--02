@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FigureFetch from "./FigureFetch";
 import JsonFetch from "./JsonFetch";
-import AudioFetch from "./AudioFetch";
 
 class Content extends Component {
 
@@ -10,7 +9,6 @@ class Content extends Component {
             <div>
                 <FigureFetch targets={this.props.targets}/>
                 <JsonFetch targets={this.props.targets}/>
-                {/*<AudioFetch/>*/}
             </div>
 
         );
