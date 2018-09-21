@@ -1,27 +1,57 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+/*import logo from './logo.svg'; /*logo from previous code and unimported*/
 import './App.css';
-import Content from './components/Content.js'
 
 class App extends Component {
-    render() {
-        let targets = [1, 3];
-        let path = 'audio/' + targets[0].toString() + '/' + targets[1].toString() +'.mp3';
-    return (
+  render() {
+      return(
+          <div className="Grid-container">
+
+              <div className="box1">
+                  <h1>Box1: Overskrift</h1>
+              </div>
+              <div className="box2">
+                  <div class="tab">
+                      <div class="nested">
+                          <button className="tablinks" onClick="openCity(event, 'Kategori 1')">Kategori 1</button>
+                          <button className="tablinks" onClick="openCity(event, 'Kategori 2')">Kategori 2</button>
+                          <button className="tablinks" onClick="openCity(event, 'Kategori 3')">Kategori 3</button>
+                          <button className="tablinks" onClick="openCity(event, 'Kategori 4')">Kategori 4</button>
+                      </div>
+                  </div>
+              </div>
+              <div className="box3">
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                  <h3>Medie</h3>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+                    <p><input type="checkbox" defaultValue="Box1" /> Innhold</p>
+              </div>
+
+              <div className="box4">
+                  Box4: Bilde
+              </div>
+
+          </div>
+      );
+    /*return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to This I guess</h1>
+          <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className="Ajax-box">
-            <Content targets={targets}/>
-            <audio autoPlay loop>
-                <source src={path} type={"audio/mpeg"}/>
-                Your browser is trash
-            </audio>
-        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
-    );
+    );*/
   }
 }
 
