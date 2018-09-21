@@ -17,6 +17,7 @@ class FigureFetch extends Component {
     }
 
     render() {
+        this.componentDidMount();
         return (
             <div dangerouslySetInnerHTML={{__html: this.state.fig}} />
         );

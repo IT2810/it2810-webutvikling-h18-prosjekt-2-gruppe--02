@@ -5,11 +5,14 @@ import Content from "./components/Content";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {selectedSvg: '1', selectedTekst: '1', selectedAudio: "1", svgTarget: ["1","1"], audioTarget: ["1","1"], tekstTarget: ["1","1"]};
+        this.state = {selectedSvg: '1', selectedTekst: '1', selectedAudio: "1", svgTarget: ["1","1"],
+            audioTarget: ["1","1"], tekstTarget: ["1","1"],
+            isPlaying: 'audio/1/1.mp3'};
 
         this.handleSvgOptionChange = this.handleSvgOptionChange.bind(this);
         this.handleTekstOptionChange = this.handleTekstOptionChange.bind(this);
         this.handleAudioOptionChange = this.handleAudioOptionChange.bind(this);
+        this.handleTabChange = this.handleTabChange.bind(this);
     }
 
     handleSvgOptionChange(changeEvent) {
@@ -19,13 +22,38 @@ class App extends Component {
     }
     handleTekstOptionChange(changeEvent) {
         this.setState({
-            selectedTekst: changeEvent.target.value
+            selectedTekst: changeEvent.target.value, tekstTarget: [changeEvent.target.value, this.state.tekstTarget[1]]
         });
     }
     handleAudioOptionChange(changeEvent) {
         this.setState({
             selectedAudio: changeEvent.target.value
         });
+
+        this.setState((state) => { return {
+            audioTarget: [state.selectedAudio, state.audioTarget[1]]
+        }});
+
+        this.setState({isPlaying: 'audio/' + changeEvent.target.value + '/' + this.state.audioTarget[1] +'.mp3'}, function () {
+            this.refs.audio.pause();
+            this.refs.audio.load();
+            this.refs.audio.play();
+
+        })
+    }
+
+    handleTabChange(changeEvent) {
+        this.setState({
+        audioTarget: [this.state.audioTarget[0], changeEvent.target.value],
+            svgTarget: [this.state.svgTarget[0], changeEvent.target.value],
+            tekstTarget: [this.state.tekstTarget[0], changeEvent.target.value]
+        });
+        this.setState({isPlaying: 'audio/' + this.state.audioTarget[0] + '/' + changeEvent.target.value +'.mp3'}, function () {
+            this.refs.audio.pause();
+            this.refs.audio.load();
+            this.refs.audio.play();
+
+        })
     }
 
 
@@ -38,12 +66,12 @@ class App extends Component {
                   <h1>Box1: Overskrift</h1>
               </div>
               <div className="box2">
-                  <div class="tab">
-                      <div class="nested">
-                          <button className="tablinks" onClick="openCity(event, 'Kategori 1')">Kategori 1</button>
-                          <button className="tablinks" onClick="openCity(event, 'Kategori 2')">Kategori 2</button>
-                          <button className="tablinks" onClick="openCity(event, 'Kategori 3')">Kategori 3</button>
-                          <button className="tablinks" onClick="openCity(event, 'Kategori 4')">Kategori 4</button>
+                  <div className="tab">
+                      <div className="nested">
+                          <button className="tablinks" value={1} onClick={this.handleTabChange}>The Sun</button>
+                          <button className="tablinks" value={2} onClick={this.handleTabChange}>The Moon</button>
+                          <button className="tablinks" value={3} onClick={this.handleTabChange}>The Stars</button>
+                          <button className="tablinks" value={4} onClick={this.handleTabChange}>Detroit</button>
                       </div>
                   </div>
               </div>
@@ -126,8 +154,8 @@ class App extends Component {
               </div>
 
               <div className="box4">
-                  <Content svgTarget={this.state.svgTarget} tekstTarget={this.state.tekstTarget}/>
-                  <audio autoPlay loop>
+                  <Content svgTarget={this.state.svgTarget} tekstTarget={this.state.tekstTarget} />
+                  <audio autoPlay loop ref="audio">
                       <source src={path} type={"audio/mpeg"}/>
                       Your browser is trash
                   </audio>

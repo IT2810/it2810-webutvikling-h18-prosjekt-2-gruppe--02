@@ -17,6 +17,7 @@ class JsonFetch extends Component {
     }
 
     render() {
+        this.componentDidMount();
         return(
             this.state.clearText
         );
