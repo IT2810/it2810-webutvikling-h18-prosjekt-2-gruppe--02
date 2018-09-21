@@ -7,8 +7,8 @@ class Content extends Component {
     render() {
         return (
             <div>
-                <FigureFetch targets={this.props.targets}/>
-                <JsonFetch targets={this.props.targets}/>
+                <FigureFetch svgTarget={this.props.svgTarget}/>
+                <JsonFetch tekstTarget={this.props.tekstTarget}/>
             </div>
 
         );

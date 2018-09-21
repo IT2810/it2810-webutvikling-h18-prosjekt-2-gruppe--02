@@ -7,7 +7,7 @@ class FigureFetch extends Component {
     }
 
     componentDidMount() {
-        let path = 'SVG/' + this.props.targets[0].toString() + '/' + this.props.targets[1].toString() + '.svg';
+        let path = 'SVG/' + this.props.svgTarget[0] + '/' + this.props.svgTarget[1] + '.svg';
         fetch(path)
             .then(response => response.text())
             .then(text => {this.setState({fig: text})})
@@ -17,6 +17,7 @@ class FigureFetch extends Component {
     }
 
     render() {
+        this.componentDidMount();
         return (
             <div dangerouslySetInnerHTML={{__html: this.state.fig}} />
         );
