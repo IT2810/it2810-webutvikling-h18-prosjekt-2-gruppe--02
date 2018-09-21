@@ -7,7 +7,7 @@ class JsonFetch extends Component {
     }
 
     componentDidMount() {
-        let path = 'text/' + this.props.targets[0].toString() + '/' + this.props.targets[1].toString() + '.json';
+        let path = 'text/' + this.props.tekstTarget[0] + '/' + this.props.tekstTarget[1] + '.json';
         fetch(path)
             .then(response => {return response.json();})
             .then(data => {this.setState({clearText: data.text})})
