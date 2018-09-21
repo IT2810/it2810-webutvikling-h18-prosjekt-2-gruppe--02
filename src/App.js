@@ -63,7 +63,7 @@ class App extends Component {
           <div className="Grid-container">
 
               <div className="box1">
-                  <h1>Box1: Overskrift</h1>
+                  <h1>SpacedOut</h1>
               </div>
               <div className="box2">
                   <div className="tab">
